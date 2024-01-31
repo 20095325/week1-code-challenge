@@ -1,8 +1,10 @@
 
 const axios = require('axios');
 
-export async function apiCall(prompt)
+export async function apiCall(formData)
 {
+    const prompt = formData.get('prompt') 
+    
     const options = {
       method: 'POST',
       url: 'https://ai-image-generator3.p.rapidapi.com/generate',
@@ -23,5 +25,7 @@ export async function apiCall(prompt)
     } catch (error) {
         console.error(error);
     }
+
+    return response
 }
 

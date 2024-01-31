@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { apiCall } from "./app";
 
 export default function Home() {
   return (
@@ -14,12 +15,16 @@ export default function Home() {
               priority
             />
         </div>
-      </div>
+        <div className="relative flex place-items-center">
 
-      <div className="relative flex place-items-center">
         <div>
-          <input type="text" id="prompt" name="Prompt" class="text-black"/>
+          <form action={apiCall()}>
+            <input type="text" id="prompt" name="Prompt" className="text-black"/>
+            <button type="submit">Generate</button>
+          </form>
         </div>
+
+      </div>
       </div>
     </main>
   );
