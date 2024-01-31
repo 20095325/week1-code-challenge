@@ -16,8 +16,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="">
-        
+      <div className="relative flex place-items-center">
+        <div>
+          <input type="text" id="prompt" name="Prompt" class="text-black"/>
+        </div>
       </div>
     </main>
   );
